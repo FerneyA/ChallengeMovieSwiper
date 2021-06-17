@@ -17,9 +17,10 @@ public class ManageUserMovieStep {
 
   @Step
   public void selectAMovieRandomlyAndSavesIt() {
-    browsePage.waitObjectVisibility();
+    browsePage.waitVisibilityLabelBrowse();
     browsePage.verticalScrolling();
     browsePage.selectMoreTopRated();
+    browsePage.waitVisibilityLabelTopRated();
     browsePage.selectRandomMovie();
     browsePage.selectButtonSave();
   }
@@ -52,8 +53,8 @@ public class ManageUserMovieStep {
 
   @Step
   public void selectMovieWithSwipeAnimation() {
-    browsePage.waitObjectVisibility();
+    browsePage.waitVisibilityLabelBrowse();
     explorePage.selectOptionExplore();
-    explorePage.horizontalScrolling();
+    explorePage.selectRandomMovieWithSwipeAnimation();
   }
 }

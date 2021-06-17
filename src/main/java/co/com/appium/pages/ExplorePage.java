@@ -12,10 +12,11 @@ public class ExplorePage extends PageObjectMobile {
   @FindBy(xpath = "//android.view.ViewGroup[@index='1']")
   private WebElementFacade movieContainer;
 
-  @FindBy(
-      xpath =
-          "//android.widget.FrameLayout[@resource-id='android:id/content']/android.widget.FrameLayout[@index='0']//*//android.view.ViewGroup[@index='1']/android.view.ViewGroup[@index='0']/android.view.ViewGroup[@index='1']")
-  private WebElementFacade swipeContainer;
+  private static final String XPATH_RANDOM_MOVIE =
+      "//android.widget.TextView[@text='Browse']//parent::android.view.ViewGroup[@index='0']//parent::android.view.ViewGroup[@index='0']//parent::android.view.ViewGroup[@index='0']//parent::android.view.ViewGroup[@index='2']//parent::android.view.ViewGroup[@index='0']//*//android.view.ViewGroup[@index='1']/android.view.ViewGroup[@index='0']/android.view.ViewGroup[@index='1']";
+
+  private static final String XPATH_SELECTED_MOVIE =
+      "//android.view.ViewGroup[@index='0']/android.view.ViewGroup[@index='2']/android.widget.TextView[@index='1']";
 
   public ExplorePage() {
     super();
@@ -24,6 +25,20 @@ public class ExplorePage extends PageObjectMobile {
   public void selectOptionExplore() {
     selectWebElement(buttonExplore);
     movieContainer.waitUntilVisible().waitUntilEnabled();
-    Serenity.setSessionVariable("SessionMovieName").to(swipeContainer.getAttribute("content-desc"));
+  }
+
+  public void selectRandomMovieWithSwipeAnimation() {
+    int randomNumbre = generateRandomNumber(10);
+    for (int x = 1; x <= randomNumbre; x++) {
+      if (x == randomNumbre) {
+        movieContainer.waitUntilVisible().waitUntilEnabled();
+        getWebElementByXpath(XPATH_RANDOM_MOVIE).click();
+        String textMovie = getWebElementByXpath(XPATH_SELECTED_MOVIE).getText();
+        Serenity.setSessionVariable("sessionMovieName").to(textMovie);
+        horizontalRightScrolling();
+      } else {
+        horizontalLeftScrolling();
+      }
+    }
   }
 }

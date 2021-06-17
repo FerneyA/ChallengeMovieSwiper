@@ -8,9 +8,6 @@ import static net.thucydides.core.webdriver.ThucydidesWebDriverSupport.getProxie
 import io.appium.java_client.MobileDriver;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 import java.util.Random;
 import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.core.pages.WebElementFacade;
@@ -44,9 +41,21 @@ public class PageObjectMobile extends PageObject {
     return webElementFacade.getText();
   }
 
+  public void waitObjectVisibility(WebElementFacade webElementFacade) {
+    webElementFacade.waitUntilVisible();
+  }
+
   public WebElement getWebElementWithText(String text) {
     return getDriver()
-        .findElement(By.xpath("//android.view.ViewGroup[@content-desc='" + text + "']"));
+        .findElement(
+            By.xpath(
+                "//android.view.ViewGroup[@index='0']/android.widget.TextView[@text='"
+                    + text
+                    + "']"));
+  }
+
+  public WebElement getWebElementByXpath(String xpath) {
+    return getDriver().findElement(By.xpath(xpath));
   }
 
   public void selectWebElementWithTwoTexts(String text1, String text2) {
@@ -75,7 +84,7 @@ public class PageObjectMobile extends PageObject {
         .perform();
   }
 
-  public void horizontalScrolling() {
+  public void horizontalRightScrolling() {
     int width = dimensions.width;
     int height = dimensions.height;
     int middleOfY = height / 2;
@@ -89,20 +98,21 @@ public class PageObjectMobile extends PageObject {
         .perform();
   }
 
-  public String generateRandomMovie() {
-    List<String> moviesList =
-        new ArrayList<>(
-            Arrays.asList(
-                "Dilwale_Dulhania_Le_Jayenge",
-                "The_Shawshank_Redemption",
-                "The_Godfather",
-                "Cruella",
-                "!The_Godfather:_Part_II",
-                "Your_Name.",
-                "Spirited_Away",
-                "Life_in_a_Year",
-                "Parasite",
-                "The_Green_Mile"));
-    return moviesList.get(new Random().nextInt(10));
+  public void horizontalLeftScrolling() {
+    int width = dimensions.width;
+    int height = dimensions.height;
+    int middleOfY = height / 2;
+    int startXCoordinate = (int) (width * .9);
+    int endXCoordinate = (int) (width * .2);
+    touchAction
+        .press(point(startXCoordinate, middleOfY))
+        .waitAction(waitOptions(ofSeconds(2)))
+        .moveTo(point(endXCoordinate, middleOfY))
+        .release()
+        .perform();
+  }
+
+  public int generateRandomNumber(int number) {
+    return new Random().nextInt(number) + 1;
   }
 }

@@ -29,7 +29,7 @@ public class ManageUserMovieDefinition {
     manageUserMovieStep.validateMovieInFavorites(movieName);
   }
 
-  @When("user selects a movie with swipe animation in the explore section")
+  @When("user selects a random movie with swipe animation in the explore section")
   public void userSelectsMovieWithSwipeAnimation() {
     manageUserMovieStep.selectMovieWithSwipeAnimation();
   }

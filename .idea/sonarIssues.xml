@@ -8,6 +8,11 @@
             <set />
           </value>
         </entry>
+        <entry key="/fragment.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.appium/java-client/7.4.1/7e8e02a6be93f27551e385ee94ec9a21ccdc260f/java-client-7.4.1-sources.jar!/io/appium/java_client/MobileBy.java">
           <value>
             <set />
@@ -19,6 +24,11 @@
           </value>
         </entry>
         <entry key="$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.appium/java-client/7.4.1/7e8e02a6be93f27551e385ee94ec9a21ccdc260f/java-client-7.4.1-sources.jar!/io/appium/java_client/TouchAction.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.appium/java-client/7.4.1/7e8e02a6be93f27551e385ee94ec9a21ccdc260f/java-client-7.4.1-sources.jar!/org/openqa/selenium/WebElement.java">
           <value>
             <set />
           </value>
@@ -174,6 +184,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/../bddrappialgorithm/src/test/resources/features/creation_orders.feature">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../bddrappirt/build.gradle">
           <value>
             <set />
           </value>
