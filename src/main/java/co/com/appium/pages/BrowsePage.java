@@ -31,7 +31,7 @@ public class BrowsePage extends PageObjectMobile {
 
   private static final String SESSION_MOVIE_NAME = "sessionMovieName";
   private static final String XPATH_RANDOM_MOVIE =
-      "//android.widget.ScrollView[@index='0']/android.view.ViewGroup[@index='0']/android.view.ViewGroup[@index='1']/android.view.ViewGroup[@index='0']";
+      "//android.widget.ScrollView[@index='0']/android.view.ViewGroup[@index='0']/android.view.ViewGroup[@index='1']/android.view.ViewGroup[@index='0']/android.widget.TextView[@index='1']";
 
   public BrowsePage() {
     super();
@@ -54,7 +54,7 @@ public class BrowsePage extends PageObjectMobile {
       verticalScrolling();
     }
     WebElement webElement = getWebElementByXpath(XPATH_RANDOM_MOVIE);
-    Serenity.setSessionVariable(SESSION_MOVIE_NAME).to(webElement.getAttribute("content-desc"));
+    Serenity.setSessionVariable(SESSION_MOVIE_NAME).to(webElement.getText());
     webElement.click();
   }
 

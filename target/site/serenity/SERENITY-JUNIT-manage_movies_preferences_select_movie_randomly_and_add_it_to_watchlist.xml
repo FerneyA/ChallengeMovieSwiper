@@ -1,1 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="0" name="Manage movies preferences" skipped="0" tests="2" time="105.02" timestamp="2021-06-16 07:53:56"><testcase name="Select movie randomly and add it to watchlist"/><testcase name="Add movie to favorites section using filter of movie name and year"/></testsuite>

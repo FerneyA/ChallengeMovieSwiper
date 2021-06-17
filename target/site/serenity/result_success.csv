@@ -1,6 +1,0 @@
-"Story","Title","Result","Date","Stability","Duration (s)"
-"Log in user in movie swiper application","Log in user in movie swiper app","SUCCESS","2021-06-16T19:56:18.456-05:00[America/Bogota]","0.0","30.68"
-"Log in user in movie swiper application","Log in guest user in movie swiper app","SUCCESS","2021-06-16T19:56:50.354-05:00[America/Bogota]","0.0","21.76"
-"Manage movies preferences","Add movie to favorites section using swipe animation","SUCCESS","2021-06-16T19:51:46.172-05:00[America/Bogota]","0.0","60.06"
-"Manage movies preferences","Select movie randomly and add it to watchlist","SUCCESS","2021-06-16T19:53:56.819-05:00[America/Bogota]","0.0","59.77"
-"Manage movies preferences","Add movie to favorites section using filter of movie name and year","SUCCESS","2021-06-16T19:54:57.836-05:00[America/Bogota]","0.0","45.25"

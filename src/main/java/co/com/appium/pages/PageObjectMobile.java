@@ -49,9 +49,9 @@ public class PageObjectMobile extends PageObject {
     return getDriver()
         .findElement(
             By.xpath(
-                "//android.view.ViewGroup[@index='0']/android.widget.TextView[@text='"
+                "//android.view.ViewGroup[@index='0']/android.widget.TextView[@text=\""
                     + text
-                    + "']"));
+                    + "\"]"));
   }
 
   public WebElement getWebElementByXpath(String xpath) {
