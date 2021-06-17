@@ -14,6 +14,6 @@ Feature: Manage movies preferences
     When user selects the movie: 'Mulan' of the year: '1998' and add it to favorites
     Then the movie: 'Mulan' should be added to favorites in the library section
 
-#  Scenario: Add movie to favorites section using swipe animation
-#    When user selects a random movie with swipe animation in the explore section
-#    Then the random movie should be added to watchlist in the library section
+  Scenario: Add movie to favorites section using swipe animation
+    When user selects a random movie with swipe animation in the explore section
+    Then the random movie should be added to watchlist in the library section
